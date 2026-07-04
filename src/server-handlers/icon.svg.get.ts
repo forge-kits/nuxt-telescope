@@ -1,0 +1,14 @@
+import { defineEventHandler, setResponseHeader } from 'h3'
+
+export default defineEventHandler((event) => {
+  setResponseHeader(event, 'Content-Type', 'image/svg+xml')
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+  <rect width="24" height="24" rx="5" fill="#00dc82"/>
+  <circle cx="10" cy="10" r="4.5" stroke="#030712" stroke-width="1.5"/>
+  <line x1="13.5" y1="13.5" x2="19" y2="19" stroke="#030712" stroke-width="2" stroke-linecap="round"/>
+  <line x1="10" y1="7.5" x2="10" y2="8.8" stroke="#030712" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="10" y1="11.2" x2="10" y2="12.5" stroke="#030712" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="7.5" y1="10" x2="8.8" y2="10" stroke="#030712" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="11.2" y1="10" x2="12.5" y2="10" stroke="#030712" stroke-width="1.2" stroke-linecap="round"/>
+</svg>`
+})

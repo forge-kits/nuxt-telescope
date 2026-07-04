@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "paths": {
+      "#app": ["./node_modules/nuxt/dist/app/index.d.ts"],
+      "#imports": ["./.nuxt/imports.d.ts"]
+    }
+  },
+  "include": [
+    "src/**/*",
+    "playground/**/*"
+  ]
+}

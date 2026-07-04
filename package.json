@@ -1,0 +1,45 @@
+{
+  "name": "@forge-kits/telescope",
+  "version": "0.1.0",
+  "description": "Nuxt module bridge for forge-kits (FastAPI)",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
+  },
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build:client": "nuxt generate --rootDir src/client",
+    "build": "npm run build:client && nuxt-module-build build",
+    "dev": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxt dev playground",
+    "dev:client": "nuxt dev --rootDir src/client",
+    "prepare": "nuxt-module-build prepare",
+    "prepack": "npm run build:client && nuxt-module-build build",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@nuxt/kit": "^3.21.8",
+    "defu": "^6.1.4",
+    "pathe": "^2.0.3"
+  },
+  "devDependencies": {
+    "@nuxt/module-builder": "^1.0.2",
+    "@nuxt/schema": "^3.21.8",
+    "@nuxtjs/tailwindcss": "^6.14.0",
+    "nuxt": "^3.21.8",
+    "typescript": "^5.8.3"
+  },
+  "peerDependencies": {
+    "nuxt": "^3.17.0 || ^3.21.0"
+  },
+  "overrides": {
+    "oxc-parser": "0.138.0"
+  },
+  "private": false
+}
