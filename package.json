@@ -1,6 +1,6 @@
 {
   "name": "@forge-kits/telescope",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Nuxt module bridge for forge-kits (FastAPI)",
   "type": "module",
   "exports": {
@@ -11,11 +11,11 @@
   ],
   "scripts": {
     "build:client": "nuxt generate --rootDir src/client",
-    "build": "npm run build:client && nuxt-module-build build",
+    "build": "npm run build:client && nuxt-module-build build && node scripts/postbuild.mjs",
     "dev": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxt dev playground",
     "dev:client": "nuxt dev --rootDir src/client",
     "prepare": "nuxt-module-build prepare",
-    "prepack": "npm run build:client && nuxt-module-build build",
+    "prepack": "npm run build:client && nuxt-module-build build && node scripts/postbuild.mjs",
     "lint": "eslint ."
   },
   "dependencies": {
