@@ -22,7 +22,7 @@ function toggleStatus(v: string) {
     <input
       v-model="searchQuery"
       placeholder="Filter path…"
-      class="flex-1 min-w-0 h-6 px-2 text-xs bg-[#1e1e1e] border border-[#2a2a2a] rounded text-[#e8e8e8] placeholder-[#555] outline-none focus:border-[#3a3a3a]"
+      class="flex-1 min-w-0 h-6 px-2 text-xs bg-[#1e1e1e] border border-[#2a2a2a] rounded text-[#e8e8e8] placeholder-[#777] outline-none focus:border-[#3a3a3a]"
     />
 
     <!-- Method -->
@@ -42,7 +42,7 @@ function toggleStatus(v: string) {
         class="h-6 px-2 text-[10px] font-semibold rounded border transition-all cursor-pointer"
         :class="statusFilter === val
           ? 'border-[#00dc82] text-[#00dc82] bg-[#00dc82]/10'
-          : 'border-[#2a2a2a] text-[#666] hover:text-[#e8e8e8]'"
+          : 'border-[#2a2a2a] text-[#aaa] hover:text-[#e8e8e8]'"
         @click="toggleStatus(val)"
       >
         {{ label }}

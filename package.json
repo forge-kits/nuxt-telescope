@@ -7,34 +7,34 @@
     ".": "./dist/module.mjs"
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "scripts": {
-    "build:client": "nuxt generate --rootDir src/client",
-    "build": "npm run build:client && nuxt-module-build build && node scripts/postbuild.mjs",
+    "build": "nuxt generate --rootDir src/client && nuxt-module-build build && node scripts/postbuild.mjs",
     "dev": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxt dev playground",
     "dev:client": "nuxt dev --rootDir src/client",
     "prepare": "nuxt-module-build prepare",
-    "prepack": "npm run build:client && nuxt-module-build build && node scripts/postbuild.mjs",
-    "lint": "eslint ."
+    "prepack": "npm run build",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.21.8",
+    "@nuxt/kit": "^4.0.0",
     "defu": "^6.1.4",
     "pathe": "^2.0.3"
   },
   "devDependencies": {
+    "@forge-kits/nuxt": "^0.1.1",
     "@nuxt/module-builder": "^1.0.2",
-    "@nuxt/schema": "^3.21.8",
+    "@nuxt/schema": "^4.4.6",
     "@nuxtjs/tailwindcss": "^6.14.0",
-    "nuxt": "^3.21.8",
+    "nuxt": "^4.0.0",
+    "oxc-parser": "latest",
     "typescript": "^5.8.3"
   },
   "peerDependencies": {
-    "nuxt": "^3.17.0 || ^3.21.0 || ^4.0.0"
-  },
-  "overrides": {
-    "oxc-parser": "0.138.0"
+    "nuxt": "^3.17.0 || ^4.0.0"
   },
   "private": false,
   "publishConfig": {

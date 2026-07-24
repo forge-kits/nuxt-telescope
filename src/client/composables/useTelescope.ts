@@ -12,18 +12,17 @@ export interface LogRecord {
   time: string
 }
 
-export interface EventRecord {
-  event: string
-  listeners: string[]
-  background: boolean
+export interface BroadcastRecord {
+  channel: string
+  payload: unknown
+  duration_ms: number
 }
 
-export interface JobRecord {
-  job: string
-  status: string
-  attempts: number
-  duration_ms: number | null
-  error: string | null
+export interface CacheRecord {
+  op: string
+  key: string
+  hit: boolean | null
+  duration_ms: number
 }
 
 export interface TelescopeEntry {
@@ -39,8 +38,8 @@ export interface TelescopeEntry {
   response_body: unknown
   queries: SqlRecord[]
   logs: LogRecord[]
-  events: EventRecord[]
-  jobs: JobRecord[]
+  broadcasts: BroadcastRecord[]
+  caches: CacheRecord[]
 }
 
 // Module-level singletons so state persists across component re-renders
