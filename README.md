@@ -69,19 +69,6 @@ export default defineNuxtConfig({
 | `url`     | `string`  | `http://localhost:8000`   | Base URL of the forge-kits backend                  |
 | `enabled` | `boolean` | `true`                    | Toggle the DevTools tab without removing the module |
 
----
-
-## How it works
-
-1. The module registers a Nuxt DevTools custom tab pointing to the embedded client UI at `/__forge_telescope/`.
-2. The client connects via WebSocket to `{url}/_forge/telescope/ws`.
-3. On connection the backend sends an `init` message with recent entries; subsequent requests arrive as `entry` messages in real time.
-4. The client keeps the last **200** entries in memory and streams them into the UI.
-
-The client assets are shipped as a pre-built static bundle inside the npm package (`dist/client/`). During local development of the module itself, the dev server falls back to `src/client/.output/public/`.
-
----
-
 ## License
 
 MIT
